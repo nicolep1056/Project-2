@@ -37,7 +37,13 @@ p{
     text-align: center;
 }
 
-.footer {
+footer {
     font-family: 'Amatic SC', cursive;
     
+}
+
+.form-group {
+    width: 500px;
+    margin-left: 25%;
+
 }
