@@ -1,4 +1,4 @@
-require("dotenv").config();
+//require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 
@@ -25,8 +25,12 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
+app.listen(PORT, function() {
+console.log('Listening on PORT '+PORT);
+});
 
+//var syncOptions = { force: false };
+/*
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 if (process.env.NODE_ENV === "test") {
@@ -43,5 +47,5 @@ db.sequelize.sync(syncOptions).then(function() {
     );
   });
 });
-
+*/
 module.exports = app;
