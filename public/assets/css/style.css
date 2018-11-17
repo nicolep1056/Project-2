@@ -1,0 +1,49 @@
+h1{
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+}
+/* body{
+    font-family: 'Amatic SC', cursive;
+
+} */
+
+.jumbotron{
+    /* background-color: rgb(223, 215, 204); */
+    background-color: #c5a282f1;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.btn{
+    background-color: rgb(129, 114, 99);
+    border: orange;
+    border-width: 2px 4px;
+    border-radius: 40px;
+    background-clip: padding-box;
+    box-shadow: 0 8px 6px -6px black;
+    color: black;
+    
+}
+.cat {
+    font-size: 18px;
+}
+
+/* body{
+    text-align: center;
+} */
+p{
+    text-align: center;
+}
+.card {
+    text-align: center;
+}
+
+footer {
+    font-family: 'Amatic SC', cursive;
+    
+}
+
+.form-group {
+    width: 500px;
+    margin-left: 25%;
+
+}
