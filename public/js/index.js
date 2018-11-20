@@ -1,6 +1,8 @@
 // Get references to page elements
 var $itemText = $("#item-text");
+var $itemArea = $("#item-area");
 var $itemDescription = $("#item-description");
+var $itemDropdown = $("#item-dropdown");
 var $submitBtn = $("#submit");
 var $itemList = $("#item-list");
 
@@ -65,18 +67,20 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 //add columns from database
   var item = {
+    category: $itemDropdown.val().trim(),
+    area: $itemArea.val().trim(),
     text: $itemText.val().trim(),
     description: $itemDescription.val().trim()
   };
-
+console.log('Item: ',item)
   if (!(item.text && item.description)) {
     alert("You must enter an item text and description!");
     return;
   }
 
-  API.saveItem(item).then(function() {
+  /*API.saveItem(item).then(function() {
     refreshItems();
-  });
+  });*/
 
   $itemText.val("");
   $itemDescription.val("");
