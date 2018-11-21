@@ -15,7 +15,7 @@ var Item = sequelize.define(
   },
   
   {
-    
+    timestamps: false,
     freezeTableName: true
   }
 );
