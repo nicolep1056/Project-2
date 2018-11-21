@@ -6,7 +6,7 @@ USE grandmas_attic
 CREATE TABLE junk(
     id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(50),
-    TIMESTAMP,
+    created_at TIMESTAMP,
     days_available INT NULL,
     PRIMARY KEY(id)
 );
