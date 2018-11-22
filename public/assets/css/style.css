@@ -1,6 +1,10 @@
 h1{
     font-family: 'Amatic SC', cursive;
+    display: block; 
     text-align: center;
+    animation-name: moveInLeft;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
 }
 /* body{
     font-family: 'Amatic SC', cursive;
@@ -11,6 +15,7 @@ h1{
     /* background-color: rgb(223, 215, 204); */
     background-color: #c5a282f1;
     box-shadow: 0 8px 6px -6px black;
+    position: relative;
 }
 
 .btn{
@@ -21,15 +26,26 @@ h1{
     background-clip: padding-box;
     box-shadow: 0 8px 6px -6px black;
     color: black;
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
     
 }
 .cat {
     font-size: 18px;
+    display: block;
+    animation: moveInRight 1s ease-out;
+    animation-duration: 5s;
 }
 
-/* body{
-    text-align: center;
-} */
+.lead {
+    font-size: 18px;
+    display: block;
+    animation: moveInRight 1s ease-out;
+    animation-duration: 5s;
+}
+
+
+
 p{
     text-align: center;
 }
@@ -59,11 +75,67 @@ footer {
 
 #tbtn {
     margin-left: 700px;
+    position: absolute;
+    margin-left: 35%;
 }
+
+#nBtn {
+    position: absolute;
+    margin-left: 100px;
+
+}
+
+#bbtn {
+    position: absolute;
+    margin-left: 70%;
+}
+
  #item-section {
      color: rgb(104, 103, 103);
      font-family: 'Amatic SC', cursive;
  }
  #fBtn {
-    margin-right: 700px;
+    position: absolute;
+    margin-left: -35%;
+}
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }   
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }   
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
