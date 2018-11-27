@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery.js"></script>
 
   <title>Grandma's Attic</title>
 </head>
@@ -19,18 +20,19 @@
   <div class="container">
     <div class="jumbotron">
       <h1 class="display-4">Grandma's <i class="fas fa-cat"></i> Attic!</h1>
-      <p class="lead">Quick explanation on how the app works.</p>
+      <p class="cat">A place to donate your gently used or unused holiday items.</p>
       <hr class="my-4">
-      <p>Quick explanation on how the app works.</p>
-      <a class="btn btn-secondary btn-lg" href="./index.html" role="button">Exit Attic <i class="fas fa-cat"></i></a>
+      <p>Post an item to the Attic!.</p>
+      <a class="btn btn-secondary btn-lg" id="nBtn" href="./index.html" role="button">Exit Attic <i class="fas fa-cat"></i></a>
+      <a class="btn btn-secondary btn-lg" id="bbtn" href="./items.html" role="button">Browse items<i class="fas fa-cat"></i></a>
     </div>
 
-    
+
     <form>
 
       <div class="form-group">
         <label for="exampleFormControlSelect1">Items to Donate</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="item">
           <option>Boxes</option>
           <option>Christmas Ornaments</option>
           <option>Ugly Christmas Sweaters</option>
@@ -40,7 +42,7 @@
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">Area</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="area">
           <option>Central</option>
           <option>South</option>
           <option>North</option>
@@ -50,11 +52,11 @@
       </div>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Brief Description of Item </label>
-        <textarea class="form-control" id="item-text" rows="3"></textarea>
+        <textarea class="form-control" id="item-describe" rows="3"></textarea>
       </div>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Pickup instructions </label>
-        <textarea class="form-control" id="item-description" rows="3"></textarea>
+        <textarea class="form-control" id="item-pickup" rows="3"></textarea>
       </div>
       <div class="form-group">
         <a class="btn btn-secondary btn-lg" id="submit" role="button">Submit <i class="fas fa-cat"></i></a>
@@ -79,9 +81,9 @@
     </footer>
   </div>
   </div>
-
+  <script src="./js/donate.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/browse.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>
