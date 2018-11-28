@@ -17,7 +17,9 @@ module.exports = function(app) {
         where: {
           routeName: req.params.items
         }
+        
       }).then(function(result) {
+        console.log("running");
         return res.json(result);
       });
     } else {
@@ -37,7 +39,7 @@ module.exports = function(app) {
   app.post("/api/new", function(req, res) {
     // Take the request...
     var items = req.body;
-
+    console.log('i am the items', items)
     // Create a routeName
 
     // Using a RegEx Pattern to remove spaces
@@ -51,7 +53,7 @@ module.exports = function(app) {
       area: items.area,
       description: items.description,
       pickup: items.pickup,
-      availableUntil: items.availableUntil
+      availableUntil: moment(items.availableUntil).toISOString()
     });
 
     res.status(204).end();

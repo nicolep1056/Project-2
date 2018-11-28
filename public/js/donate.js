@@ -2,7 +2,7 @@ $("#submit").on("click", function (event) {
   event.preventDefault();
 
   var newDonation = {
-    category: $("#item")
+    item: $("#item")
       .val()
       .trim(),
     area: $("#area")
