@@ -16,12 +16,12 @@ USE grandmas_attic;
 	CREATE TABLE items (
     id INTEGER NOT NULL AUTO_INCREMENT,
     category VARCHAR(40),
-    username VARCHAR(30),
+/*     username VARCHAR(30), */
     item VARCHAR(30),
     area VARCHAR(30),
-    available_until DATE,
     description_of_item VARCHAR(100),
     pickup_instructions VARCHAR(100),
+    available_until DATE,
     time TIMESTAMP,
     PRIMARY KEY(id)
 );

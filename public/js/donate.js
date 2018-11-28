@@ -2,7 +2,7 @@ $("#submit").on("click", function (event) {
   event.preventDefault();
 
   var newDonation = {
-    item: $("#item")
+    category: $("#item")
       .val()
       .trim(),
     area: $("#area")
@@ -12,6 +12,9 @@ $("#submit").on("click", function (event) {
       .val()
       .trim(),
     pickup: $("#item-pickup")
+      .val()
+      .trim(),
+    availableUntil: $("#item-availability")
       .val()
       .trim()
   };
@@ -31,4 +34,5 @@ $("#submit").on("click", function (event) {
   $("#area").val("");
   $("#item-describe").val("");
   $("#item-pickup").val("");
+  $("#item-availability").val("");
 });

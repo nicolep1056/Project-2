@@ -1,4 +1,9 @@
+var moment = require("moment");
+moment().format();
+
 var Item = require("../models/items.js");
+
+var Sequelize = require("sequelize")
 
 // Routes
 // =============================================================
@@ -10,7 +15,7 @@ module.exports = function(app) {
     
       Item.findOne({
         where: {
-          id: req.params.items
+          routeName: req.params.items
         }
       }).then(function(result) {
         return res.json(result);
@@ -18,8 +23,8 @@ module.exports = function(app) {
     } else {
       Item.findAll({
         where: {
-          available_until: {
-            [Sequelize.Op.gte]: Moment()
+          availableUntil: {
+            [Sequelize.Op.gte]: moment().format("YYYY-MM-DD")
           }
         }
       }).then(function(result) {
@@ -45,7 +50,8 @@ module.exports = function(app) {
       item: items.item,
       area: items.area,
       description: items.description,
-      pickup: items.pickup
+      pickup: items.pickup,
+      availableUntil: items.availableUntil
     });
 
     res.status(204).end();

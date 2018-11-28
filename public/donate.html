@@ -12,6 +12,8 @@
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+
 
   <title>Grandma's Attic</title>
 </head>
@@ -33,11 +35,14 @@
       <div class="form-group">
         <label for="exampleFormControlSelect1">Items to Donate</label>
         <select class="form-control" id="item">
-          <option>Boxes</option>
-          <option>Christmas Ornaments</option>
-          <option>Ugly Christmas Sweaters</option>
-          <option>Holiday Decorations</option>
-          <option>other</option>
+          <option>Christmas</option>
+          <option>Valentine's Day</option>
+          <option>Easter</option>
+          <option>4th of July</option>
+          <option>Halloween</option>
+          <option>Thanksgiving</option>
+          <option>Birthday</option>
+          <option>Other</option>
         </select>
       </div>
       <div class="form-group">
@@ -59,8 +64,8 @@
         <textarea class="form-control" id="item-pickup" rows="3"></textarea>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Available Until </label>
-        <textarea class="form-control" id="item-pickup" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1">Available Until (YYYY/MM/DD)</label>
+        <textarea class="form-control" id="item-availability" rows="3"></textarea>
       </div>
       <div class="form-group">
         <a class="btn btn-secondary btn-lg" id="submit" role="button">Submit <i class="fas fa-cat"></i></a>
