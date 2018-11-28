@@ -10,13 +10,19 @@ module.exports = function(app) {
     
       Item.findOne({
         where: {
-          routeName: req.params.items
+          id: req.params.items
         }
       }).then(function(result) {
         return res.json(result);
       });
     } else {
-      Item.findAll().then(function(result) {
+      Item.findAll({
+        where: {
+          available_until: {
+            [Sequelize.Op.gte]: Moment()
+          }
+        }
+      }).then(function(result) {
         return res.json(result);
       });
     }

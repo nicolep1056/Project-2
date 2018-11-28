@@ -15,11 +15,20 @@ USE grandmas_attic;
 USE grandmas_attic;
 	CREATE TABLE items (
     id INTEGER NOT NULL AUTO_INCREMENT,
+    category VARCHAR(40),
+    username VARCHAR(30),
     item VARCHAR(30),
     area VARCHAR(30),
+    available_until DATE,
     description_of_item VARCHAR(100),
     pickup_instructions VARCHAR(100),
     time TIMESTAMP,
     PRIMARY KEY(id)
 );
 	SELECT * FROM items
+
+/* CREATE TABLE user (
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    username VARCHAR(30),
+    password VARCHAR(30)
+); */

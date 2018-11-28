@@ -11,7 +11,8 @@ var Item = sequelize.define(
     item: Sequelize.STRING,
     area: Sequelize.STRING,
     description: Sequelize.STRING,
-    pickup: Sequelize.STRING
+    pickup: Sequelize.STRING,
+    available_until: Sequelize.DATE
   },
   
   {
@@ -19,6 +20,7 @@ var Item = sequelize.define(
     freezeTableName: true
   }
 );
+
 
 // Syncs with DB
 Item.sync();
