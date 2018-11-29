@@ -1,4 +1,9 @@
+var moment = require("moment");
+moment().format();
+
 var Item = require("../models/items.js");
+
+var Sequelize = require("sequelize")
 
 // Routes
 // =============================================================
@@ -12,11 +17,19 @@ module.exports = function(app) {
         where: {
           routeName: req.params.items
         }
+        
       }).then(function(result) {
+        console.log("running");
         return res.json(result);
       });
     } else {
-      Item.findAll().then(function(result) {
+      Item.findAll({
+        where: {
+          availableUntil: {
+            [Sequelize.Op.gte]: moment().format("YYYY-MM-DD")
+          }
+        }
+      }).then(function(result) {
         return res.json(result);
       });
     }
@@ -26,7 +39,7 @@ module.exports = function(app) {
   app.post("/api/new", function(req, res) {
     // Take the request...
     var items = req.body;
-
+    console.log('i am the items', items)
     // Create a routeName
 
     // Using a RegEx Pattern to remove spaces
@@ -39,7 +52,8 @@ module.exports = function(app) {
       item: items.item,
       area: items.area,
       description: items.description,
-      pickup: items.pickup
+      pickup: items.pickup,
+      availableUntil: moment(items.availableUntil).toISOString()
     });
 
     res.status(204).end();

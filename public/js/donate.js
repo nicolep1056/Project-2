@@ -13,6 +13,9 @@ $("#submit").on("click", function (event) {
       .trim(),
     pickup: $("#item-pickup")
       .val()
+      .trim(),
+    availableUntil: $("#item-availability")
+      .val()
       .trim()
   };
   console.log(newDonation);
@@ -31,4 +34,5 @@ $("#submit").on("click", function (event) {
   $("#area").val("");
   $("#item-describe").val("");
   $("#item-pickup").val("");
+  $("#item-availability").val("");
 });

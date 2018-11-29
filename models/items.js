@@ -7,11 +7,30 @@ var Item = sequelize.define(
   "item",
   {
     // the routeName gets saved as a string
-    routeName: Sequelize.STRING,
-    item: Sequelize.STRING,
-    area: Sequelize.STRING,
-    description: Sequelize.STRING,
-    pickup: Sequelize.STRING
+    routeName: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    item: {
+      type:Sequelize.STRING,
+      allowNull: false
+    },
+    area: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    description: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    pickup: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    availableUntil: {
+/*       field: availableUntil, */
+      type: Sequelize.DATEONLY
+    }
   },
   
   {
@@ -19,6 +38,7 @@ var Item = sequelize.define(
     freezeTableName: true
   }
 );
+
 
 // Syncs with DB
 Item.sync();
