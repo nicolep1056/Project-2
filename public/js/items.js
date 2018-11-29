@@ -1,13 +1,13 @@
 document.getElementById("christmas").addEventListener("click", function () {
-    app.get("/api/christmas/:christmas"){
+    app.get("/api/christmas/:christmas", function(req, res){
         Item.findAll({
             where: {
-                season: req.params.season
+                routeName: req.params.season
             }
         }).then(function (result) {
             return res.json(result);
         });
-    }
+    });
 
-    var = `<h1>${}<h1>`
+/*     var item = `<h1>${}<h1>` */
 });
