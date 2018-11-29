@@ -3,14 +3,23 @@ var Item = require("../models/items.js");
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // Search for Specific Items then provides JSON
-  app.get("/api/:items?", function(req, res) {
-    if (req.params.items) {
+//Pull all API data (working 11/29)
+  app.get("/api", function(req, res) {
+
+      Item.findAll().then(function(result) {
+        return res.json(result);
+      });
+    
+  });
+  // Search for Specific Items then provides JSON (working as of 11/29)
+  app.get("/api/:item", function(req, res) {
+    
+    if (req.params.item) {
       // Display the JSON for ONLY that Item.
     
       Item.findOne({
         where: {
-          routeName: req.params.items
+          routeName: req.params.item
         }
       }).then(function(result) {
         return res.json(result);
@@ -22,8 +31,45 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/api/id/:id", function(req, res) {
+
+    if (req.params.id) {
+      // Display the JSON for ONLY that Item. (working 11/29)
+    console.log(req.params.id)
+      Item.findOne({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    } else {
+      Item.findAll().then(function(result) {
+        return res.json(result);
+      });
+    }
+  });
+
+/*  app.delete("/api/id/:id", function(req, res) {
+    if (req.params.id) {
+      // Display the JSON for ONLY that Item.
+    
+      Item.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    } else {
+      Item.findAll().then(function(result) {
+        return res.json(result);
+      });
+    }
+  });*/
+
   // If a user sends data to add a new item
-  app.post("/api/new", function(req, res) {
+  app.post("/api", function(req, res) {
     // Take the request...
     var items = req.body;
 
@@ -45,3 +91,7 @@ module.exports = function(app) {
     res.status(204).end();
   });
 };
+
+
+
+

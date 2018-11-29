@@ -20,71 +20,84 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1 class="display-4">Grandma's <i class="fas fa-cat"></i> Attic!</h1>
+      <h1 class="display-4">Grandma's
+        <i class="fas fa-cat"></i> Attic!</h1>
       <p class="lead">A place to donate your gently used or unused holiday items.</p>
       <hr class="my-4">
       <p>Browse through a selection of holiday decor and goods.</p>
       <div class="form-row d-flex justify-content-center">
-        <a class="btn btn-secondary btn-lg" id="fBtn" href="./index.html" role="button">Exit Attic <i class="fas fa-cat"></i></a>
-        <a class="btn btn-secondary btn-lg" id="tbtn" href="./donate.html" role="button">Donate Here! <i class="fas fa-cat"></i></a>
+        <a class="btn btn-secondary btn-lg" id="fBtn" href="./index.html" role="button">Exit Attic
+          <i class="fas fa-cat"></i>
+        </a>
+        <a class="btn btn-secondary btn-lg" id="tbtn" href="./donate.html" role="button">Donate Here!
+          <i class="fas fa-cat"></i>
+        </a>
       </div>
     </div>
 
 
 
-    <div class="card-deck">
+    <div class="card-deck" id="allseasons">
 
       <div class="row">
         <div class="col-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/xmas.jpg" alt="Card image cap">
+          <div class="card" id="christmas" data-value="1">
+            <img class="card-img-top" id="christmas" src="assets/images/xmas.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Christmas</h5>
-              <p class="card-text"><small class="text-muted">
+              <p class="card-text">
+                <small class="text-muted">
                   <p>Christmas Trees</p>
                   <p>Ornaments</p>
                   <p>Stockings</p>
-                </small></p>
+                </small>
+              </p>
             </div>
           </div>
         </div>
 
         <div class="col-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/vday.jpg" alt="Card image cap">
+          <div class="card" id="valentines" data-value="2">
+            <img class="card-img-top" id="valentines" src="assets/images/vday.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Valentine's Day</h5>
-              <p class="card-text"><small class="text-muted">
+              <p class="card-text">
+                <small class="text-muted">
                   <p>Exchange Cards</p>
                   <p>Tableware</p>
                   <p>Decorations</p>
-                </small></p>
+                </small>
+              </p>
             </div>
           </div>
         </div>
         <div class="col-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/egg.jpg" alt="Card image cap">
+          <div class="card" id="easter">
+            <img class="card-img-top" id="easter" src="assets/images/egg.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Easter</h5>
-              <p class="card-text"><small class="text-muted">
+              <p class="card-text">
+                <small class="text-muted">
                   <p>Easter Eggs</p>
                   <p>Baskets</p>
                   <p>Bunnies</p>
-                </small></p>
+                </small>
+              </p>
             </div>
           </div>
         </div>
         <div class="col-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/flag.jpg" alt="Card image cap">
+          <div class="card" id="fourthofjuly">
+            <img class="card-img-top" id="fourthofjuly" src="assets/images/flag.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">4th of July</h5>
-              <p class="card-text"><small class="text-muted">
+              <p class="card-text">
+                <small class="text-muted">
                   <p>American Flags</p>
                   <p>Sparklers</p>
                   <p>Banners</p>
-                </small></p>
+                </small>
+              </p>
             </div>
           </div>
         </div>
@@ -94,53 +107,61 @@
       <div class="row">
         <div class="col-3">
           <div class="card" id="halloween">
-            <img class="card-img-top" src="assets/images/jack.jpg" alt="Card image cap">
+            <img class="card-img-top" id="halloween" src="assets/images/jack.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Halloween</h5>
-              <p class="card-text"><small class="text-muted">
+              <p class="card-text">
+                <small class="text-muted">
                   <p>Outdoor Decorations</p>
                   <p>Costumes</p>
                   <p>Pumpkins</p>
-                </small></p>
+                </small>
+              </p>
             </div>
           </div>
         </div>
         <div class="col-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/thanks.jpg" alt="Card image cap">
+          <div class="card" id="thanksgiving">
+            <img class="card-img-top" id="thanksgiving" src="assets/images/thanks.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Thanksgiving</h5>
-              <p class="card-text"><small class="text-muted">
+              <p class="card-text">
+                <small class="text-muted">
                   <p>Thanksgiving Decorations</p>
                   <p>Center Pieces</p>
                   <p>Thanksgiving Tableware</p>
-                </small></p>
+                </small>
+              </p>
             </div>
           </div>
         </div>
         <div class="col-3">
           <div class="card" id="birthday">
-            <img class="card-img-top" src="assets/images/balloon.jpg" alt="Card image cap">
+            <img class="card-img-top" id="birthday" src="assets/images/balloon.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Birthday</h5>
-              <p class="card-text"><small class="text-muted">
+              <p class="card-text">
+                <small class="text-muted">
                   <p>Party Hats</p>
                   <p>Streamers/Signs</p>
                   <p>Birthday Candles</p>
-                </small></p>
+                </small>
+              </p>
             </div>
           </div>
         </div>
         <div class="col-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/grandma.jpg" alt="Card image cap">
+          <div class="card" id="otheroccasions">
+            <img class="card-img-top" id="other" src="assets/images/grandma.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Other Occasions</h5>
-              <p class="card-text"><small class="text-muted">
+              <p class="card-text">
+                <small class="text-muted">
                   <p>Boxes</p>
                   <p>Wrapping Paper</p>
                   <p>Lights</p>
-                </small></p>
+                </small>
+              </p>
             </div>
           </div>
         </div>
@@ -152,12 +173,12 @@
 
       <div class="card">
         <div class="card-header">
-          Items Available
+          Items Available:
         </div>
         <div class="card-body" id="item-section">
 
           <!-- Content will go in here -->
-
+          <!--<button class="test">Test</button>-->
         </div>
       </div>
     </div>
@@ -176,8 +197,9 @@
       <div class="container">
         <p>
           <i class="fas fa-cat"></i>
-          <a href="https://www.austinpetsalive.org" target="_blank">Austin Pets Alive<br>Your donation is
-            appreciated.</a>
+          <a href="https://www.austinpetsalive.org" target="_blank">Austin Pets Alive
+            <br>Your donation is appreciated.
+          </a>
           <i class="fas fa-cat"></i>
           <a href="./index.html" target="_blank">Home</a>
         </p>
@@ -187,6 +209,13 @@
   </div>
   <script src="./js/browse.js"></script>
   <script src="./js/items.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.claimBtn').on('click', function () {
+        console.log("Item Claimed")
+      })
+    })
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>
 
