@@ -1,25 +1,22 @@
+var moment = require("moment");
+moment().format();
+
 var Item = require("../models/items.js");
+var Sequelize = require("sequelize")
 
-module.exports = function (app) {
-  // Get all items
-  app.get("/api/items", function (req, res) {
-    db.Item.findAll({}).then(function (dbItems) {
-      res.json(dbItems);
+
+
+// Routes
+// =============================================================
+module.exports = function(app) {
+  app.get("/api", function(req, res) {
+
+    Item.findAll().then(function(result) {
+      return res.json(result);
     });
-  });
+  
+});
 
-  // Create a new item
-  app.post("/api/items", function (req, res) {
-    db.Item.create(req.body).then(function (dbItem) {
-      res.json(dbItem);
-    });
-  });
-
-  // Delete an item by id
-  app.delete("/api/items/:id", function (req, res) {
-    db.Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
-      res.json(dbItem);
-      
   // Search for Specific Items then provides JSON
   app.get("/api/:items?", function(req, res) {
     if (req.params.items) {
@@ -29,21 +26,33 @@ module.exports = function (app) {
         where: {
           routeName: req.params.items
         }
+        
       }).then(function(result) {
+        console.log("running");
         return res.json(result);
       });
     } else {
-      Item.findAll().then(function(result) {
+      Item.findAll({
+        where: {
+          availableUntil: {
+            [Sequelize.Op.gte]: moment().format("YYYY-MM-DD")
+          }
+        }
+      }).then(function(result) {
         return res.json(result);
       });
     }
   });
 
+    app.delete("/api/items/:id", function (req, res) {
+    db.Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
+      res.json(dbItem);
+  
   // If a user sends data to add a new item
-  app.post("/api/new", function(req, res) {
+  app.post("/api", function(req, res) {
     // Take the request...
     var items = req.body;
-
+    console.log('i am the items', items)
     // Create a routeName
 
     // Using a RegEx Pattern to remove spaces
@@ -56,12 +65,16 @@ module.exports = function (app) {
       item: items.item,
       area: items.area,
       description: items.description,
-      pickup: items.pickup
+
+      pickup: items.pickup,
+      availableUntil: moment(items.availableUntil).toISOString()
 
     });
 
     res.status(204).end();
   });
+  
+  
 
   /*
   app.get("/api/holidays/:cat", function(req,res){
