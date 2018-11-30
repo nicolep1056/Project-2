@@ -99,4 +99,23 @@ module.exports = function (app) {
       }
     })
   })
+  app.put("/api/id/:id", function (req, res) {
+    Item.update({ claimed: true }, 
+      {where: { id: req.params.id }})
+    .then(function (dbItem) {
+      console.log(dbItem)
+      if (dbItem != null) {
+        console.log('not null');
+        location.reload();
+        //return res.status(404).end();
+      }
+      else {
+        console.log('CLAIMED');
+        res.status(200).end();
+      }
+    })
+  })
 }
+
+
+
