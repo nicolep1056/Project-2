@@ -27,6 +27,11 @@ var Item = sequelize.define(
       type: Sequelize.STRING,
       allowNull: false
     },
+    claimed: {
+      type: Sequelize.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
     availableUntil: {
 /*       field: availableUntil, */
       type: Sequelize.DATEONLY
