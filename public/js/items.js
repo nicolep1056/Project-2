@@ -6,9 +6,9 @@ $(".cat").on("click", function () {
 
     $.get("/api/holidays/" + clickVal, function (items) {
         // items is your data from the back end to use to build your html like...
-        //$(.).append html here
+        //$().append html here
     })
 })
 
-// var = `<h1>${}<h1>`
-// });
+
+
