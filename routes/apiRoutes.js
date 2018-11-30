@@ -106,7 +106,7 @@ module.exports = function (app) {
       console.log(dbItem)
       if (dbItem != null) {
         console.log('not null');
-        location.reload();
+        //location.reload();
         //return res.status(404).end();
       }
       else {

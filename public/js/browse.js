@@ -5,6 +5,8 @@ $.get("/api", function (data) {
   for (var i = 0; i < data.length; i++) {
     // Create a parent div for the oncoming elements
     var itemSection = $("<div>");
+    //Filter out claimed items from "Recently Listed" section.
+    if (data[i].claimed === false) {
     // Add a class to this div: 'this'
     itemSection.addClass("this");
     // Add an id to the this to mark which this it is
@@ -24,6 +26,8 @@ $.get("/api", function (data) {
     // $("#item-this-" + i).append(
     // "<h4>Pickup Instructions: " + data[i].pickup + "</h4>"
     //);
+    }
+
   }
 });
 
@@ -77,11 +81,7 @@ $.get("/api", function (seasons) {
         );
 
       }
-        //$("#" + seasonName + "-items").html('Sorry, no results today. Check back later!')
-      
-      /*if (result.length === 0) {
-        $("#" + seasonName + "-items").html('Sorry, no results today. Check back later!')
-      }*/
+
       else {
         itemSection.addClass("this");
         itemBtn.addClass("claimBtn");

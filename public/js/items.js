@@ -24,14 +24,13 @@ function onSignIn(googleUser) {
 $(document).on('click', '.claimBtn', function () {
     let itemClaimed = $(this).attr("id");
     console.log('Item Claimed (id): ', itemClaimed);
-
+    // Reload the page to get the updated list (not currently working)
+    location.reload()
     $.ajax("/api/id/" + itemClaimed, {
         type: "PUT"
     }).then(
         function () {
             console.log("claimed item", id);
-            // Reload the page to get the updated list (not currently working)
-            location.reload();
         }
     );
     //if time allows, create modal to ask if user is sure they want to claim a specific item
