@@ -1,5 +1,4 @@
 
-
 //Determine which occasion is clicked on and direct to the appropriate page.
 $('.card-img-top').on('click', function () {
     let seasonSelected = $(this).attr("id");
@@ -29,6 +28,7 @@ $(document).on('click','.claimBtn',function(){
               }
             );*/
           });
+
 
 
 
