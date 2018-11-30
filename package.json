@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "moment": "^2.22.2",
+    "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
     "npm": "^6.4.1",
     "path": "^0.12.7",

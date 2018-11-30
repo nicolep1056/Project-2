@@ -44,13 +44,18 @@ h1{
     animation-duration: 5s;
 }
 
-
+.col-lg-12 {
+    max-width: 75%;
+    margin: 0 auto;
+}
 
 p{
     text-align: center;
 }
 .card {
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .card-img-top {
