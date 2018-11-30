@@ -1,8 +1,6 @@
-//Set tomorrow as a variable to filter out any items were "available until" date has passed.
+//Set tomorrow as a variable to filter out any items where "available until" is a past date.
 let tomorrow = moment(Date.now() + 1 * 24 * 3600 * 1000).format("YYYY-MM-DD");
-console.log(tomorrow);
-
-//Display a bit of data for each item on main items page
+console.log(tomorrow)
 $.get("/api", function (res) {
   console.log("Data: ", res);
   var data = res.filter(obj => {
@@ -50,7 +48,10 @@ $.get("/api", function (seasons) {
   var firstList = seasons.filter(obj => {
     return obj.routeName === seasonName;
   })
-  var result = firstList.filter(obj => {
+  var secondList = firstList.filter(obj => {
+    return obj.claimed === false;
+  })
+  var result = secondList.filter(obj => {
     return obj.availableUntil > tomorrow;
   })
   //Check back later if no results; otherwise, loop through the results and display.
