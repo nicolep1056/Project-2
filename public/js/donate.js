@@ -20,7 +20,7 @@ $("#submit").on("click", function (event) {
   };
   console.log(newDonation);
   // send an AJAX POST-request with jQuery
-  $.post("/api/new", newDonation)
+  $.post("/api", newDonation)
     // on success, run this callback
     .then(function (data) {
       // log the data we found
