@@ -10,25 +10,14 @@ h1{
     font-family: 'Amatic SC', cursive;
 
 } */
-ul {
-    margin: 0;
-    padding: 0;
- }
- li{
-    float:left;
-    margin-right:10px;
-    position:relative;
-  }
+
 .jumbotron{
     /* background-color: rgb(223, 215, 204); */
     background-color: #c5a282f1;
     box-shadow: 0 8px 6px -6px black;
     position: relative;
 }
-.btn-secondary {
-    text-decoration: none !important;
-    /*trying to remove text decoration from "Claim" button to make text easier to read*/
-}
+
 .btn{
     background-color: rgb(129, 114, 99);
     border: orange;
@@ -101,15 +90,7 @@ footer {
     margin-left: 70%;
 }
 
- #item-section, 
- #christmas-items,
- #valentines-items,
- #easter-items,
- #other-items,
- #halloween-items,
- #thanksgiving-items,
- #fourthofjuly-items,
- #birthday-items {
+ #item-section {
      color: rgb(104, 103, 103);
      font-family: 'Amatic SC', cursive;
  }

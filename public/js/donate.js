@@ -13,11 +13,14 @@ $("#submit").on("click", function (event) {
       .trim(),
     pickup: $("#item-pickup")
       .val()
+      .trim(),
+    availableUntil: $("#item-availability")
+      .val()
       .trim()
   };
   console.log(newDonation);
   // send an AJAX POST-request with jQuery
-  $.post("/api/new", newDonation)
+  $.post("/api", newDonation)
     // on success, run this callback
     .then(function (data) {
       // log the data we found
@@ -31,4 +34,5 @@ $("#submit").on("click", function (event) {
   $("#area").val("");
   $("#item-describe").val("");
   $("#item-pickup").val("");
+  $("#item-availability").val("");
 });

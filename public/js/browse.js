@@ -68,6 +68,9 @@ $.get("/api", function (seasons) {
     $("#item-this-" + i).append(
       "<h4>Pickup Instructions: " + result[i].pickup + "</h4>"
     );
+    $("#item-this-" + i).append(
+      "<h4>Available Until: " + result[i].availableUntil + "</h4>"
+    );
 
   }
 });
