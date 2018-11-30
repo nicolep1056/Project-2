@@ -8,6 +8,13 @@ var Sequelize = require("sequelize")
 // Routes
 // =============================================================
 module.exports = function(app) {
+  app.get("/api", function(req, res) {
+
+    Item.findAll().then(function(result) {
+      return res.json(result);
+    });
+  
+});
   // Search for Specific Items then provides JSON
   app.get("/api/:items?", function(req, res) {
     if (req.params.items) {
@@ -36,7 +43,7 @@ module.exports = function(app) {
   });
 
   // If a user sends data to add a new item
-  app.post("/api/new", function(req, res) {
+  app.post("/api", function(req, res) {
     // Take the request...
     var items = req.body;
     console.log('i am the items', items)
