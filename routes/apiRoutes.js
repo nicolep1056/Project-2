@@ -2,8 +2,9 @@ var moment = require("moment");
 moment().format();
 
 var Item = require("../models/items.js");
-
 var Sequelize = require("sequelize")
+
+
 
 // Routes
 // =============================================================
@@ -15,6 +16,7 @@ module.exports = function(app) {
     });
   
 });
+
   // Search for Specific Items then provides JSON
   app.get("/api/:items?", function(req, res) {
     if (req.params.items) {
@@ -42,6 +44,10 @@ module.exports = function(app) {
     }
   });
 
+    app.delete("/api/items/:id", function (req, res) {
+    db.Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
+      res.json(dbItem);
+  
   // If a user sends data to add a new item
   app.post("/api", function(req, res) {
     // Take the request...
@@ -59,10 +65,29 @@ module.exports = function(app) {
       item: items.item,
       area: items.area,
       description: items.description,
+
       pickup: items.pickup,
       availableUntil: moment(items.availableUntil).toISOString()
+
     });
 
     res.status(204).end();
   });
+  
+  
+
+  /*
+  app.get("/api/holidays/:cat", function(req,res){
+    let searchTerm = req.params.cat
+
+    Item.findAll({
+            where: {
+                season:searchTerm
+            }
+            res.send(data)
+
+  })
+  
+  
+  */
 };
