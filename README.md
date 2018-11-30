@@ -48,15 +48,13 @@ Moment.js (https://momentjs.com/)
 Heroku - Deployment(https://www.heroku.com/)
 Cloudinary(https://cloudinary.com/)
 
-
 ## Authors
 
-Nicole Pike - nicolep1056 (Back-End: Database)
-Jennifer Tuten -  jenntuten (Back-End: Routing | Front-End: HTML/CSS/JS - Item Claim Functionality)
-Ian Dowdy - IanDowdy (Cloudinary API)
-Patricia Seade - PATTIMINTS (Front-End: HTML/CSS/JS - Layout)
-Alexandria Toothman - artooth (Front-End: HTML/CSS/JS - Layout)
-
+Nicole Pike - nicolep1056
+Jennifer Tuten -  jenntuten
+Ian Dowdy - IanDowdy
+Patricia Seade - PATTIMINTS
+Alexandria Toothman - artooth
 
 ## Acknowledgments 
 

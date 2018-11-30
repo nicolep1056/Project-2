@@ -4,6 +4,8 @@ moment().format();
 var Item = require("../models/items.js");
 var Sequelize = require("sequelize")
 
+
+
 // Routes
 // =============================================================
 module.exports = function (app) {
@@ -32,6 +34,7 @@ module.exports = function (app) {
       });
     }
   });
+
   // Search for Specific Items then provides JSON
   app.get("/api/:items?", function (req, res) {
     if (req.params.items) {
@@ -60,6 +63,11 @@ module.exports = function (app) {
   });
 
 
+    app.delete("/api/items/:id", function (req, res) {
+    db.Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
+      res.json(dbItem);
+  
+
   // If a user sends data to add a new item
   app.post("/api", function (req, res) {
     // Take the request...
@@ -85,6 +93,7 @@ module.exports = function (app) {
 
     res.status(204).end();
   });
+
 
   app.delete("/api/id/:id", function (req, res) {
     Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
@@ -116,6 +125,7 @@ module.exports = function (app) {
     })
   })
 }
+
 
 
 
