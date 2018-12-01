@@ -67,7 +67,7 @@ $("#submit").on("click", function (event) {
       // log the data we found
       console.log("Data going to the API",data);
       // tell the user we're adding an item.
-      alert("Adding Donation...");
+      //alert("Adding Donation...");
     });
 
   // empty each input box by replacing the value with an empty string
