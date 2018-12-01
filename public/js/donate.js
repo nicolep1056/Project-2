@@ -7,6 +7,7 @@ let userImg = "";
 
 getImgUrl = function (cb) {
   fileUpload.addEventListener('change', function (event) {
+    console.log(event);
     var file = event.target.files[0];
     var formData = new FormData();
     formData.append('file', file);
@@ -22,9 +23,9 @@ getImgUrl = function (cb) {
       data: formData
     }).then(function (res) {
       console.log("Res", res);
-      imgPreview.src = res.data.url;
+      imgPreview.src = res.data.secure_url;
       console.log("imgprev", imgPreview.src);
-      userImg = res.data.url;
+      userImg = res.data.secure_url;
       cb(userImg)
     }).catch(function (err) {
       console.error(err)
