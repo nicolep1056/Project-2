@@ -32,6 +32,26 @@ module.exports = function (app) {
       });
     }
   });
+
+ 
+
+  app.get("/api/id/:id", function (req, res) {
+    if (req.params.id) {
+      // Display the JSON for ONLY that Item.
+      console.log(req.params.id)
+      Item.findOne({
+        where: {
+          id: req.params.id
+        }
+      }).then(function (result) {
+        return res.json(result);
+      });
+    } else {
+      Item.findAll().then(function (result) {
+        return res.json(result);
+      });
+    }
+  });
   // Search for Specific Items then provides JSON
   app.get("/api/:items?", function (req, res) {
     if (req.params.items) {
@@ -59,6 +79,8 @@ module.exports = function (app) {
     }
   });
 
+
+    
 
   // If a user sends data to add a new item
   app.post("/api", function (req, res) {
@@ -99,4 +121,24 @@ module.exports = function (app) {
       }
     })
   })
-}
+  app.put("/api/id/:id", function (req, res) {
+    Item.update({ claimed: true }, 
+      {where: { id: req.params.id }})
+    .then(function (dbItem) {
+      console.log(dbItem)
+      if (dbItem != null) {
+        console.log('not null');
+        //location.reload();
+        //return res.status(404).end();
+      }
+      else {
+        console.log('CLAIMED');
+        res.status(200).end();
+      }
+    })
+  })
+};
+
+
+
+
