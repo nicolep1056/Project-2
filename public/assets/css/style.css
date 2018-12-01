@@ -31,14 +31,14 @@ h1{
     
 }
 .cat {
-    font-size: 18px;
+    font-size: 20px;
     display: block;
     animation: moveInRight 1s ease-out;
     animation-duration: 5s;
 }
 
 .lead {
-    font-size: 18px;
+    font-size: 24px;
     display: block;
     animation: moveInRight 1s ease-out;
     animation-duration: 5s;
@@ -50,9 +50,11 @@ h1{
 }
 
 p{
+    font-size: 18px;
     text-align: center;
 }
 .card {
+    font-size: 26px;
     text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -65,6 +67,10 @@ p{
     object-fit: cover;
 }
 
+.card-title {
+    font-size: 40px;
+}
+
 footer {
     font-family: 'Amatic SC', cursive;
     
@@ -74,6 +80,9 @@ footer {
     width: 500px;
     margin-left: 25%;
 
+}
+.forms {
+    padding: 10px;
 }
 #submit {
     margin-left: 300px;
@@ -145,3 +154,60 @@ footer {
         transform: translate(0);
     }
 }
+
+@media screen and (max-width: 600px) {
+    .form-group {
+        float: none;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+#submit {
+    margin-left: 30%;
+}
+}
+@media screen and (max-width: 600px) {
+#bbtn {
+    position: absolute;
+    margin-left: 45%;
+
+}
+}
+@media screen and (max-width: 600px) {
+.jumbotron{
+    /* background-color: rgb(223, 215, 204); */
+    background-color: #c5a282f1;
+    box-shadow: 0 8px 6px -6px black;
+    position: relative;
+    padding-bottom: 35%;
+}
+}
+@media screen and (max-width: 600px) {
+#nBtn {
+    position: absolute;
+    margin-left: 4%;
+}
+}
+
+
+@media screen and (max-width: 600px) {
+    #fBtn {
+        position: absolute;
+        margin-left: -25%;
+    }
+}
+@media screen and (max-width: 600px) {
+#tbtn {
+    position: absolute;
+    margin-left: 20%;
+}
+}
+
+@media screen and (max-width: 600px) {
+    #cBtn {
+        position: absolute;
+        margin-left: 20%;
+        margin-top: 17%
+    }
+    }
