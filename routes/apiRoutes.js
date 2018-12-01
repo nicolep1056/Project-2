@@ -80,7 +80,7 @@ module.exports = function (app) {
         var routeName = items.item.replace(/\s+/g, "").toLowerCase();
 
         // Adds the item to the database using sequelize
-        Item.create({
+        db.Item.create({
           routeName: routeName,
           item: items.item,
           area: items.area,
