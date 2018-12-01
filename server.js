@@ -20,7 +20,7 @@ require("./routes/htmlRoutes")(app);
 
 // Starting the server, syncing our models ------------------------------------/
 /*  db.sequelize.sync(syncOptions).then(function() { */
-  db.sequelize.sync({ force: true}).then(function() {
+   db.sequelize.sync({ force: true}).then(function() { 
   app.listen(PORT, function() {
     console.log(
       "app listening on port" + PORT

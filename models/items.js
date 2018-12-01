@@ -1,10 +1,10 @@
-var Sequelize = require("sequelize");
+/* var Sequelize = require("sequelize"); */
 // sequelize references our connection to the DB.
-var sequelize = require("../models/index.js");
-module.exports = function(sequelize, Sequelize) {
+/* var sequelize = require("../models/index.js"); */
+ module.exports = function(sequelize, Sequelize) { 
 // Creates an "Item" model that matches up with DB
 var Item = sequelize.define(
-  "item",
+  "Item",
   {
     // the routeName gets saved as a string
     routeName: {
@@ -46,10 +46,12 @@ var Item = sequelize.define(
     timestamps: false,
     freezeTableName: true
   }
+
 );
 
 return Item;
-}
+console.log();
+ };
 
 // Syncs with DB
 /* Item.sync(); */

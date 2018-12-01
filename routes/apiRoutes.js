@@ -1,16 +1,16 @@
 var moment = require("moment");
 moment().format();
 
-var Item = require("../models/items.js");
+/* var Item = require("../models/items.js"); */
 var Sequelize = require("sequelize")
-
+const db = require("../models");
 // Routes
 // =============================================================
 module.exports = function (app) {
   app.get("/api", function (req, res) {
-
-    Item.findAll().then(function (result) {
+    db.Item.findAll().then(function (result) {
       return res.json(result);
+      console.log(result);
     });
 
   });
@@ -80,7 +80,7 @@ module.exports = function (app) {
         var routeName = items.item.replace(/\s+/g, "").toLowerCase();
 
         // Adds the item to the database using sequelize
-        Item.create({
+        db.Item.create({
           routeName: routeName,
           item: items.item,
           area: items.area,

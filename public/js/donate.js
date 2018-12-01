@@ -1,12 +1,13 @@
-var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/grandmasattic/upload';
-var CLOUDINARY_UPLOAD_PRESET = 'dnvff9t2'
+var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dwvvv8mxc/image/upload';
+var CLOUDINARY_UPLOAD_PRESET = 'vgn3lprq'
 
 var imgPreview = document.getElementById('img-preview');
 var fileUpload = document.getElementById('file-upload');
-let userImg;
+let userImg = "";
 
 getImgUrl = function (cb) {
   fileUpload.addEventListener('change', function (event) {
+    console.log(event);
     var file = event.target.files[0];
     var formData = new FormData();
     formData.append('file', file);
@@ -22,9 +23,9 @@ getImgUrl = function (cb) {
       data: formData
     }).then(function (res) {
       console.log("Res", res);
-      imgPreview.src = res.data.url;
+      imgPreview.src = res.data.secure_url;
       console.log("imgprev", imgPreview.src);
-      userImg = res.data.url;
+      userImg = res.data.secure_url;
       cb(userImg)
     }).catch(function (err) {
       console.error(err)
@@ -66,7 +67,7 @@ $("#submit").on("click", function (event) {
       // log the data we found
       console.log("Data going to the API",data);
       // tell the user we're adding an item.
-      alert("Adding Donation...");
+      //alert("Adding Donation...");
     });
 
   // empty each input box by replacing the value with an empty string
