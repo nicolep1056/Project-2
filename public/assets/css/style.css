@@ -153,3 +153,37 @@ footer {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .form-group {
+        float: none;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+#submit {
+    margin-left: 30%;
+}
+}
+@media screen and (max-width: 600px) {
+#bbtn {
+    position: absolute;
+    margin-left: 45%;
+
+}
+}
+@media screen and (max-width: 600px) {
+.jumbotron{
+    /* background-color: rgb(223, 215, 204); */
+    background-color: #c5a282f1;
+    box-shadow: 0 8px 6px -6px black;
+    position: relative;
+    padding-bottom: 30%;
+}
+}
+@media screen and (max-width: 600px) {
+#nBtn {
+    position: absolute;
+    margin-left: 4%;
+}
+}
