@@ -1,9 +1,9 @@
-var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/grandmasattic/upload';
-var CLOUDINARY_UPLOAD_PRESET = 'dnvff9t2'
+var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dwvvv8mxc/image/upload';
+var CLOUDINARY_UPLOAD_PRESET = 'vgn3lprq'
 
 var imgPreview = document.getElementById('img-preview');
 var fileUpload = document.getElementById('file-upload');
-let userImg;
+let userImg = "";
 
 getImgUrl = function (cb) {
   fileUpload.addEventListener('change', function (event) {

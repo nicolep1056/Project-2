@@ -1,4 +1,4 @@
-module.exports = function (app) {
+/* module.exports = function (app) {
     //Links to current list of friends 
     app.get("/api/items", function (req, res) {
         res.json(atticItems);
@@ -7,4 +7,4 @@ module.exports = function (app) {
     app.post('/api/items', function (req, res) {
 
 
-    })}
+    })} */
