@@ -2,24 +2,23 @@
 
 Grandma’s Attic is an application that allows users to donate gently used or unused holiday supplies. The perfect application for anyone that wants to clean out their attic or update their holiday decor. The application’s target audience is those whose budget is limited for holiday decorations like schools, nursing homes and shelters. Spread the holiday cheer by donating your seasonal decorations to Grandma’s Attic!
 
-The app can be accessed here(hyperlink). 
+The app can be accessed here [here](https://github.com/nicolep1056/Project-2.git) 
 
 ## How to Use
 
-Enter the attic ( screen shot)
+### Enter the attic (screen shot)
+* Click "Enter Attic" button
 
-Either browse items that are up for donation, or claim available items.  
+### Click donate item (Screen shot)
+* Fill out the form that appears and leave instructions on how to pick it up 
 
-Click donate item (Screen shot)
--fill out the form that appears and leave instructions on how to pick it up 
+### Explore the Attic (screen shot)
+* Select which holiday you would like to browse by 
+* You will be taken to the holiday page, on this page you will see all available items up for grabs.
 
-Select which holiday you would like to browse by (screen shot)
-
-You will be taken to the holiday page, on this page you will see all available items up for grabs.
-
-Each category's page will allow users to claim an item or see if an item has already been claimed.
-
-If you find an item you’d like to pick up, follow the pick-up instructions.
+### Claim Item (screen shot)
+* Each category's page will allow users to claim an item or see if an item has already been claimed.
+* If you find an item you’d like to pick up, follow the pick-up instructions.
 
 ## MVP
 
@@ -33,29 +32,29 @@ At this point, the app serves as an advertising platform similar to Craigslist (
 
 ## Future Development
 
-User Authentication: allow users to manage claim status (view/update their own listings and/or items they've claimed).
+* User Authentication: allow users to manage claim status (view/update their own listings and/or items they've claimed).
 
-Map layout pinpointing item locations.
+* Map layout pinpointing item locations.
 
-Facilitate communication between users.
+* Facilitate communication between users.
 
 ## Built With
 
-Bootstrap - Front-end Library (https://getbootstrap.com/)
-MySQL - Database (https://www.mysql.com/)
-Sequelize (http://docs.sequelizejs.com/)
-Moment.js (https://momentjs.com/)
-Heroku - Deployment(https://www.heroku.com/)
-Cloudinary(https://cloudinary.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [MySQL](https://www.mysql.com/)
+* [Sequelize](http://docs.sequelizejs.com/)
+* [Moment.js](https://momentjs.com/)
+* [Heroku](https://www.heroku.com/)
+* [Cloudinary](https://cloudinary.com/)
 
 ## Authors
 
-Nicole Pike - nicolep1056
-Jennifer Tuten -  jenntuten
-Ian Dowdy - IanDowdy
-Patricia Seade - PATTIMINTS
-Alexandria Toothman - artooth
+* **Nicole Pike** - [nicolep1056](https://github.com/nicolep1056)
+* **Jennifer Tuten** -  [jenntuten](https://github.com/jenntuten)
+* **Ian Dowdy** - [IanDowdy](https://github.com/IanDowdy)
+* **Patricia Seade** - [PATTIMINTS](https://github.com/PATTIMINTS)
+* **Alexandria Toothman** - [artooth](https://github.com/artooth)
 
 ## Acknowledgments 
 
-Unsplash(https://unsplash.com/) photographers for the photos used
+* [Unsplash](https://unsplash.com/) photographers for the photos used
