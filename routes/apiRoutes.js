@@ -109,7 +109,7 @@ module.exports = function (app) {
         })
       })
       app.put("/api/id/:id", function (req, res) {
-        Item.update({ claimed: true },
+        db.Item.update({ claimed: true },
           { where: { id: req.params.id } })
           .then(function (dbItem) {
             console.log(dbItem)
