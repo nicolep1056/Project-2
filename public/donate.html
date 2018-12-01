@@ -29,62 +29,75 @@
       <a class="btn btn-secondary btn-lg" id="bbtn" href="./items.html" role="button">Browse items<i class="fas fa-cat"></i></a>
     </div>
 
+    <div class="col-lg-12">
 
-    <form>
 
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Items to Donate</label>
-        <select class="form-control" id="item">
-          <option>Christmas</option>
-          <option>Valentines</option>
-          <option>Easter</option>
+        <div class="card">
+          <div class="card-header">
+    
+              <h2>Post an Item:</h2>
+          </div>
+          <div class="card-body" id="item-section">
+    
+              <form>
 
-          <option>Fourth of July</option>
-
-          <option>Halloween</option>
-          <option>Thanksgiving</option>
-          <option>Birthday</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Area</label>
-        <select class="form-control" id="area">
-          <option>Central</option>
-          <option>South</option>
-          <option>North</option>
-          <option>East</option>
-          <option>West</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Brief Description of Item </label>
-        <textarea class="form-control" id="item-describe" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Pickup instructions </label>
-        <textarea class="form-control" id="item-pickup" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Available Until (YYYY-MM-DD)</label>
-        <textarea class="form-control" id="item-availability" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-          <img src="http://fillmurray.com/g/300/300" id="img-preview" width =200/>
-          <label class="file-upload-container" for="file-upload">
-              <input id="file-upload" type="file" style="display:none;"> <button>Select an Image </button><br>(Optional).<br> If uploading an image, please wait for your image to display before clicking Submit.
-          </label>
+                  <div class="forms">
+                    <label for="exampleFormControlSelect1">Items to Donate</label>
+                    <select class="form-control" id="item">
+                      <option>Christmas</option>
+                      <option>Valentines</option>
+                      <option>Easter</option>
+            
+                      <option>Fourth of July</option>
+                      <option>Halloween</option>
+                      <option>Thanksgiving</option>
+                      <option>Birthday</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="forms">
+                    <label for="exampleFormControlSelect1">Area</label>
+                    <select class="form-control" id="area">
+                      <option>Central</option>
+                      <option>South</option>
+                      <option>North</option>
+                      <option>East</option>
+                      <option>West</option>
+                    </select>
+                  </div>
+                  <div class="forms">
+                    <label for="exampleFormControlTextarea1">Brief Description of Item </label>
+                    <textarea class="form-control" id="item-describe" rows="3"></textarea>
+                  </div>
+                  <div class="forms">
+                    <label for="exampleFormControlTextarea1">Pickup instructions </label>
+                    <textarea class="form-control" id="item-pickup" rows="3"></textarea>
+                  </div>
+                  <div class="forms">
+                    <label for="exampleFormControlTextarea1">Available Until (YYYY-MM-DD)</label>
+                    <input class="form-control" id="item-availability" rows="3"/>
+                  </div>
+                  <div class="forms">
+                      <img src="https://place-hold.it/200x200" id="img-preview" width =200/><br><br>
+                      <label class="file-upload-container" for="file-upload">
+                          <input id="file-upload" type="file" style="display:none;"> <button>Select an Image </button><br>(Optional)<br> If uploading an image, please wait for your image to display before clicking Submit.
+                      </label>
+                    </div>
+            
+              </div>
+              <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            
+                  <div class="forms">
+                    <a class="btn btn-secondary btn-lg" id="submit" role="button">Submit <i class="fas fa-cat"></i></a>
+                  </div>
+                </form>
+              </div>
+    
+          </div>
         </div>
 
-  </div>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="./js/donate.js" type="text/javascript"></script>
-
-      <div class="form-group">
-        <a class="btn btn-secondary btn-lg" id="submit" role="button">Submit <i class="fas fa-cat"></i></a>
       </div>
-    </form>
-  </div>
+    
 
 
   <br>
