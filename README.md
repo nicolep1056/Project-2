@@ -2,7 +2,7 @@
 
 Grandma’s Attic is an application that allows users to donate gently used or unused holiday supplies. The perfect application for anyone that wants to clean out their attic or update their holiday decor. The application’s target audience is those whose budget is limited for holiday decorations like schools, nursing homes and shelters. Spread the holiday cheer by donating your seasonal decorations to Grandma’s Attic!
 
-The app can be accessed here [here](https://github.com/nicolep1056/Project-2.git) 
+The app can be accessed here [here](https://grandmasattic.herokuapp.com/) 
 
 ## How to Use
 
