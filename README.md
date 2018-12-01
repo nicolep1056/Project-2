@@ -6,11 +6,15 @@ The app can be accessed here [here](https://github.com/nicolep1056/Project-2.git
 
 ## How to Use
 
-### Enter the attic (screen shot)
+### Enter the attic 
 * Click "Enter Attic" button
 
-### Click donate item (Screen shot)
+<img width="446" alt="enter-attic" src="https://user-images.githubusercontent.com/40549632/49323175-1ca00900-f4dd-11e8-8be1-2090fa0dd2fd.PNG">
+
+### Click donate item 
 * Fill out the form that appears and leave instructions on how to pick it up 
+
+<img width="448" alt="donate-attic" src="https://user-images.githubusercontent.com/40549632/49323238-1bbba700-f4de-11e8-875a-45b192cc5471.PNG">
 
 ### Explore the Attic (screen shot)
 * Select which holiday you would like to browse by 
