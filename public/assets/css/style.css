@@ -1,6 +1,10 @@
 h1{
     font-family: 'Amatic SC', cursive;
+    display: block; 
     text-align: center;
+    animation-name: moveInLeft;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
 }
 /* body{
     font-family: 'Amatic SC', cursive;
@@ -11,6 +15,7 @@ h1{
     /* background-color: rgb(223, 215, 204); */
     background-color: #c5a282f1;
     box-shadow: 0 8px 6px -6px black;
+    position: relative;
 }
 
 .btn{
@@ -21,25 +26,50 @@ h1{
     background-clip: padding-box;
     box-shadow: 0 8px 6px -6px black;
     color: black;
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
     
 }
 .cat {
-    font-size: 18px;
+    font-size: 20px;
+    display: block;
+    animation: moveInRight 1s ease-out;
+    animation-duration: 5s;
 }
 
-/* body{
-    text-align: center;
-} */
+.lead {
+    font-size: 24px;
+    display: block;
+    animation: moveInRight 1s ease-out;
+    animation-duration: 5s;
+}
+
+.col-lg-12 {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+
 p{
+    font-size: 18px;
     text-align: center;
 }
 .card {
+    font-size: 26px;
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: 'Amatic SC', cursive;
 }
+
 .card-img-top {
     width: 100%;
     height: 15vw;
     object-fit: cover;
+}
+
+.card-title {
+    font-size: 40px;
 }
 
 footer {
@@ -52,3 +82,130 @@ footer {
     margin-left: 25%;
 
 }
+#submit {
+    margin-left: 300px;
+}
+
+#tbtn {
+    margin-left: 700px;
+    position: absolute;
+    margin-left: 35%;
+}
+
+#nBtn {
+    position: absolute;
+    margin-left: 100px;
+
+}
+
+#bbtn {
+    position: absolute;
+    margin-left: 70%;
+}
+
+ #item-section {
+     color: rgb(104, 103, 103);
+     font-family: 'Amatic SC', cursive;
+ }
+ #fBtn {
+    position: absolute;
+    margin-left: -35%;
+}
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }   
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }   
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-group {
+        float: none;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+#submit {
+    margin-left: 30%;
+}
+}
+@media screen and (max-width: 600px) {
+#bbtn {
+    position: absolute;
+    margin-left: 45%;
+
+}
+}
+@media screen and (max-width: 600px) {
+.jumbotron{
+    /* background-color: rgb(223, 215, 204); */
+    background-color: #c5a282f1;
+    box-shadow: 0 8px 6px -6px black;
+    position: relative;
+    padding-bottom: 35%;
+}
+}
+@media screen and (max-width: 600px) {
+#nBtn {
+    position: absolute;
+    margin-left: 4%;
+}
+}
+
+
+@media screen and (max-width: 600px) {
+    #fBtn {
+        position: absolute;
+        margin-left: -25%;
+    }
+}
+@media screen and (max-width: 600px) {
+#tbtn {
+    position: absolute;
+    margin-left: 20%;
+}
+}
+
+@media screen and (max-width: 600px) {
+    #cBtn {
+        position: absolute;
+        margin-left: 20%;
+        margin-top: 17%
+    }
+    }
