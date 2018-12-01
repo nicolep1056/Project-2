@@ -1,16 +1,16 @@
 var moment = require("moment");
 moment().format();
 
-var Item = require("../models/items.js");
+/* var Item = require("../models/items.js"); */
 var Sequelize = require("sequelize")
-
+const db = require("../models");
 // Routes
 // =============================================================
 module.exports = function (app) {
   app.get("/api", function (req, res) {
-
-    Item.findAll().then(function (result) {
+    db.Item.findAll().then(function (result) {
       return res.json(result);
+      console.log(result);
     });
 
   });
