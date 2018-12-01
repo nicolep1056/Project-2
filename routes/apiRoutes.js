@@ -80,64 +80,70 @@ module.exports = function (app) {
   });
 
 
-    
+  app.delete("/api/items/:id", function (req, res) {
+    db.Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
+      res.json(dbItem);
 
-  // If a user sends data to add a new item
-  app.post("/api", function (req, res) {
-    // Take the request...
-    var items = req.body;
-    console.log('i am the items', items)
-    // Create a routeName
-
-    // Using a RegEx Pattern to remove spaces
-
-    var routeName = items.item.replace(/\s+/g, "").toLowerCase();
-
-    // Adds the item to the database using sequelize
-    Item.create({
-      routeName: routeName,
-      item: items.item,
-      area: items.area,
-      description: items.description,
-
-      pickup: items.pickup,
-      availableUntil: moment(items.availableUntil).toISOString()
-
-    });
-
-    res.status(204).end();
-  });
-
-  app.delete("/api/id/:id", function (req, res) {
-    Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
-      console.log(dbItem)
-      if (dbItem != null) {
-        console.log('not null');
-        return res.status(404).end();
-      }
-      else {
-        console.log('CLAIMED');
-        res.status(200).end();
-      }
     })
   })
-  app.put("/api/id/:id", function (req, res) {
-    Item.update({ claimed: true }, 
-      {where: { id: req.params.id }})
-    .then(function (dbItem) {
-      console.log(dbItem)
-      if (dbItem != null) {
-        console.log('not null');
-        //location.reload();
-        //return res.status(404).end();
-      }
-      else {
-        console.log('CLAIMED');
-        res.status(200).end();
-      }
-    })
-  })
-};
+
+      // If a user sends data to add a new item
+      app.post("/api", function (req, res) {
+        // Take the request...
+        var items = req.body;
+        console.log('i am the items', items)
+        // Create a routeName
+
+        // Using a RegEx Pattern to remove spaces
+
+        var routeName = items.item.replace(/\s+/g, "").toLowerCase();
+
+        // Adds the item to the database using sequelize
+        Item.create({
+          routeName: routeName,
+          item: items.item,
+          area: items.area,
+          description: items.description,
+          pickup: items.pickup,
+          image: items.image,
+          availableUntil: items.availableUntil
+
+        });
+
+        res.status(204).end();
+      });
+
+
+      app.delete("/api/id/:id", function (req, res) {
+        Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
+          console.log(dbItem)
+          if (dbItem != null) {
+            console.log('not null');
+            return res.status(404).end();
+          }
+          else {
+            console.log('CLAIMED');
+            res.status(200).end();
+          }
+        })
+      })
+      app.put("/api/id/:id", function (req, res) {
+        Item.update({ claimed: true },
+          { where: { id: req.params.id } })
+          .then(function (dbItem) {
+            console.log(dbItem)
+            if (dbItem != null) {
+              console.log('not null');
+              //location.reload();
+              //return res.status(404).end();
+            }
+            else {
+              console.log('CLAIMED');
+              res.status(200).end();
+            }
+          })
+      })
+    }
 
 
 

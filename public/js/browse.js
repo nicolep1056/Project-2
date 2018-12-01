@@ -1,6 +1,11 @@
-//Display a bit of data for each item on main items page
-$.get("/api", function (data) {
-  console.log("Data: ", data);
+//Set tomorrow as a variable to filter out any items where "available until" is a past date.
+let tomorrow = moment(Date.now() + 1 * 24 * 3600 * 1000).format("YYYY-MM-DD");
+console.log(tomorrow)
+$.get("/api", function (res) {
+  console.log("Data: ", res);
+  var data = res.filter(obj => {
+    return obj.availableUntil > tomorrow;
+  })
   // For each item that our server sends us back
   for (var i = 0; i < data.length; i++) {
     // Create a parent div for the oncoming elements
@@ -40,8 +45,14 @@ $.get("/api", function (seasons) {
   seasonName = seasonName.split("?")[0].split("#")[0].split(".")[0];
   console.log(seasonName);
 
-  var result = seasons.filter(obj => {
+  var firstList = seasons.filter(obj => {
     return obj.routeName === seasonName;
+  })
+  var secondList = firstList.filter(obj => {
+    return obj.claimed === false;
+  })
+  var result = secondList.filter(obj => {
+    return obj.availableUntil > tomorrow;
   })
   //Check back later if no results; otherwise, loop through the results and display.
   if (result.length === 0) {
@@ -80,6 +91,8 @@ $.get("/api", function (seasons) {
           "Available Until: " + result[i].availableUntil
         );
 
+
+
       }
 
       else {
@@ -104,8 +117,14 @@ $.get("/api", function (seasons) {
           "Pickup Instructions: " + result[i].pickup + "<br>"
         );
         $("#item-this-" + i).append(
-          "Available Until: " + result[i].availableUntil
+          "Available Until: " + result[i].availableUntil+"<br>"
         );
+        if (result[i].image !=null) {
+          $("#item-this-" + i).append(
+            "<img src = " + result[i].image+" width=200>"
+          );
+        }
+
 
       }
 
@@ -113,6 +132,8 @@ $.get("/api", function (seasons) {
 
 }
 });
+
+
 
 
 

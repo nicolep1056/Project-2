@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 // sequelize references our connection to the DB.
-var sequelize = require("../config/config.js");
-
+var sequelize = require("../models/index.js");
+module.exports = function(sequelize, Sequelize) {
 // Creates an "Item" model that matches up with DB
 var Item = sequelize.define(
   "item",
@@ -32,6 +32,10 @@ var Item = sequelize.define(
       allowNull: false,
       defaultValue: false
     },
+    image: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
     availableUntil: {
 /*       field: availableUntil, */
       type: Sequelize.DATEONLY
@@ -44,9 +48,11 @@ var Item = sequelize.define(
   }
 );
 
+return Item;
+}
 
 // Syncs with DB
-Item.sync();
+/* Item.sync(); */
 
 // Makes the Iatem Model available for other files (will also create a table)
-module.exports = Item;
+/* module.exports = Item; */
