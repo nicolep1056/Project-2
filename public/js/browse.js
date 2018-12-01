@@ -91,6 +91,8 @@ $.get("/api", function (seasons) {
           "Available Until: " + result[i].availableUntil
         );
 
+
+
       }
 
       else {
@@ -115,8 +117,14 @@ $.get("/api", function (seasons) {
           "Pickup Instructions: " + result[i].pickup + "<br>"
         );
         $("#item-this-" + i).append(
-          "Available Until: " + result[i].availableUntil
+          "Available Until: " + result[i].availableUntil+"<br>"
         );
+        if (result[i].image !=null) {
+          $("#item-this-" + i).append(
+            "<img src = " + result[i].image+" width=200>"
+          );
+        }
+
 
       }
 
@@ -124,6 +132,8 @@ $.get("/api", function (seasons) {
 
   }
 });
+
+
 
 
 

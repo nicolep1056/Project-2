@@ -32,6 +32,10 @@ var Item = sequelize.define(
       allowNull: false,
       defaultValue: false
     },
+    image: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
     availableUntil: {
 /*       field: availableUntil, */
       type: Sequelize.DATEONLY

@@ -69,6 +69,16 @@
         <label for="exampleFormControlTextarea1">Available Until (YYYY-MM-DD)</label>
         <textarea class="form-control" id="item-availability" rows="3"></textarea>
       </div>
+      <div class="form-group">
+          <img src="http://fillmurray.com/g/300/300" id="img-preview" width =200/>
+          <label class="file-upload-container" for="file-upload">
+              <input id="file-upload" type="file" style="display:none;"> <button>Select an Image </button><br>(Optional).<br> If uploading an image, please wait for your image to display before clicking Submit.
+          </label>
+        </div>
+
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="../public/scripts/app.js"></script>
 
       <div class="form-group">
         <a class="btn btn-secondary btn-lg" id="submit" role="button">Submit <i class="fas fa-cat"></i></a>
