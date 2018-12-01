@@ -1,15 +1,15 @@
 var moment = require("moment");
 moment().format();
 
-var Item = require("../models/items.js");
-var Sequelize = require("sequelize")
+const db = require("../models");
+//var Sequelize = require("sequelize")
 
 // Routes
 // =============================================================
 module.exports = function (app) {
   app.get("/api", function (req, res) {
 
-    Item.findAll().then(function (result) {
+    db.Item.findAll().then(function (result) {
       return res.json(result);
     });
 
@@ -19,7 +19,7 @@ module.exports = function (app) {
     if (req.params.id) {
       // Display the JSON for ONLY that Item.
       console.log(req.params.id)
-      Item.findOne({
+      db.Item.findOne({
         where: {
           id: req.params.id
         }
@@ -27,7 +27,7 @@ module.exports = function (app) {
         return res.json(result);
       });
     } else {
-      Item.findAll().then(function (result) {
+      db.Item.findAll().then(function (result) {
         return res.json(result);
       });
     }
@@ -39,7 +39,7 @@ module.exports = function (app) {
     if (req.params.id) {
       // Display the JSON for ONLY that Item.
       console.log(req.params.id)
-      Item.findOne({
+      db.Item.findOne({
         where: {
           id: req.params.id
         }
@@ -47,7 +47,7 @@ module.exports = function (app) {
         return res.json(result);
       });
     } else {
-      Item.findAll().then(function (result) {
+      db.Item.findAll().then(function (result) {
         return res.json(result);
       });
     }
@@ -57,7 +57,7 @@ module.exports = function (app) {
     if (req.params.items) {
       // Display the JSON for ONLY that Item.
 
-      Item.findOne({
+      db.Item.findOne({
         where: {
           routeName: req.params.items
         }
@@ -67,7 +67,7 @@ module.exports = function (app) {
         return res.json(result);
       });
     } else {
-      Item.findAll({
+      db.Item.findAll({
         where: {
           availableUntil: {
             [Sequelize.Op.gte]: moment().format("YYYY-MM-DD")
@@ -99,7 +99,7 @@ module.exports = function (app) {
         var routeName = items.item.replace(/\s+/g, "").toLowerCase();
 
         // Adds the item to the database using sequelize
-        Item.create({
+        db.Item.create({
           routeName: routeName,
           item: items.item,
           area: items.area,
@@ -115,7 +115,7 @@ module.exports = function (app) {
 
 
       app.delete("/api/id/:id", function (req, res) {
-        Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
+        db.Item.destroy({ where: { id: req.params.id } }).then(function (dbItem) {
           console.log(dbItem)
           if (dbItem != null) {
             console.log('not null');
@@ -128,7 +128,7 @@ module.exports = function (app) {
         })
       })
       app.put("/api/id/:id", function (req, res) {
-        Item.update({ claimed: true },
+        db.Item.update({ claimed: true },
           { where: { id: req.params.id } })
           .then(function (dbItem) {
             console.log(dbItem)

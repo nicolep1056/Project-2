@@ -1,6 +1,6 @@
-var Sequelize = require("sequelize");
+//var Sequelize = require("sequelize");
 // sequelize references our connection to the DB.
-var sequelize = require("../models/index.js");
+//var sequelize = require("../models/index.js");
 module.exports = function(sequelize, Sequelize) {
 // Creates an "Item" model that matches up with DB
 var Item = sequelize.define(
