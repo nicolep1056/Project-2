@@ -50,7 +50,7 @@ var Item = sequelize.define(
 );
 
 return Item;
-console.log(Item);
+console.log();
  };
 
 // Syncs with DB
