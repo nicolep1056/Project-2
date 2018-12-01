@@ -86,6 +86,7 @@ module.exports = function (app) {
           area: items.area,
           description: items.description,
           pickup: items.pickup,
+          image: items.image,
           availableUntil: items.availableUntil
 
         });

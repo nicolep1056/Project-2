@@ -1,3 +1,42 @@
+var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/grandmasattic/upload';
+var CLOUDINARY_UPLOAD_PRESET = 'dnvff9t2'
+
+var imgPreview = document.getElementById('img-preview');
+var fileUpload = document.getElementById('file-upload');
+let userImg;
+
+getImgUrl = function (cb) {
+  fileUpload.addEventListener('change', function (event) {
+    var file = event.target.files[0];
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    console.log(file);
+
+    axios({
+      url: CLOUDINARY_URL,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: formData
+    }).then(function (res) {
+      console.log("Res", res);
+      imgPreview.src = res.data.url;
+      console.log("imgprev", imgPreview.src);
+      userImg = res.data.url;
+      cb(userImg)
+    }).catch(function (err) {
+      console.error(err)
+    })
+  })
+}
+
+getImgUrl(function (value) {
+  console.log("??", value);
+});
+console.log(userImg, "userimg");
+
 $("#submit").on("click", function (event) {
   event.preventDefault();
 
@@ -14,19 +53,20 @@ $("#submit").on("click", function (event) {
     pickup: $("#item-pickup")
       .val()
       .trim(),
+    image: userImg,
     availableUntil: $("#item-availability")
       .val()
       .trim()
   };
-  console.log(newDonation);
+  console.log("NEW donation:",newDonation);
   // send an AJAX POST-request with jQuery
   $.post("/api", newDonation)
     // on success, run this callback
     .then(function (data) {
       // log the data we found
-      console.log(data);
+      console.log("Data going to the API",data);
       // tell the user we're adding an item.
-      //alert("Adding Donation...");
+      alert("Adding Donation...");
     });
 
   // empty each input box by replacing the value with an empty string
@@ -86,4 +126,5 @@ $('#clear').on('click', function () {
   $('#goodwills').val('');
   $('#goodwill').html('');
 })
+
 
