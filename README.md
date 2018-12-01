@@ -12,9 +12,11 @@ The app can be accessed here [here](https://github.com/nicolep1056/Project-2.git
 ### Click donate item (Screen shot)
 * Fill out the form that appears and leave instructions on how to pick it up 
 
-### Explore the Attic (screen shot)
+### Explore the Attic
 * Select which holiday you would like to browse by 
 * You will be taken to the holiday page, on this page you will see all available items up for grabs.
+
+<img width="585" alt="explore-attic" src="https://user-images.githubusercontent.com/40549632/49323348-7570a100-f4df-11e8-9638-be65111f4be4.PNG">
 
 ### Claim Item (screen shot)
 * Each category's page will allow users to claim an item or see if an item has already been claimed.
