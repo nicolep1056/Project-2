@@ -26,7 +26,7 @@ The app can be accessed here [here](https://github.com/nicolep1056/Project-2.git
 
 <img width="585" alt="explore-attic" src="https://user-images.githubusercontent.com/40549632/49323348-7570a100-f4df-11e8-9638-be65111f4be4.PNG">
 
-### Claim Item (screen shot)
+### Claim Item 
 * Each category's page will allow users to claim an item or see if an item has already been claimed.
 * If you find an item you’d like to pick up, follow the pick-up instructions.
 
