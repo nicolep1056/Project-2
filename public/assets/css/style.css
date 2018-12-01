@@ -178,7 +178,7 @@ footer {
     background-color: #c5a282f1;
     box-shadow: 0 8px 6px -6px black;
     position: relative;
-    padding-bottom: 30%;
+    padding-bottom: 35%;
 }
 }
 @media screen and (max-width: 600px) {
@@ -187,3 +187,25 @@ footer {
     margin-left: 4%;
 }
 }
+
+
+@media screen and (max-width: 600px) {
+    #fBtn {
+        position: absolute;
+        margin-left: -25%;
+    }
+}
+@media screen and (max-width: 600px) {
+#tbtn {
+    position: absolute;
+    margin-left: 20%;
+}
+}
+
+@media screen and (max-width: 600px) {
+    #cBtn {
+        position: absolute;
+        margin-left: 20%;
+        margin-top: 17%
+    }
+    }
